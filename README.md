@@ -1,2 +1,2 @@
-# Convert my money - devpleno fullstack lab
+# Convert my money - devpleno fullstack
 Converted = cotation * quantity
