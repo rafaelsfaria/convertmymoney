@@ -1,5 +1,6 @@
 const express = require('express')
 const path = require('path')
+const { convert, toMoney } = require('./lib/convert');
 
 const port = process.env.PORT || 3000
 const app = express()
@@ -10,6 +11,21 @@ app.use(express.static(path.join(__dirname, 'public')))
 
 app.get('/', (req, res) => {
   res.render('home')
+})
+
+app.get('/cotacao', (req, res) => {
+  const { cotacao, quantidade } = req.query;
+  if (cotacao && quantidade) {
+    const conversao = convert(cotacao, quantidade)
+    res.render('cotacao', {
+      conversao: toMoney(conversao),
+      cotacao: toMoney(cotacao),
+      quantidade: toMoney(quantidade),
+      error: false
+    })  
+  } else {
+    res.render('cotacao', { error: 'Valores inválidos' })
+  }
 })
 
 app.listen(port, err => {
