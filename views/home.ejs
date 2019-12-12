@@ -3,17 +3,17 @@
   <form action="/cotacao" id="form" method="GET">
     <div class="form-group">
       <label for="cotacao">Cotacao: </label>
-      <input name="cotacao" class="form-control" id="cotacao" type="text" placeholder="Cotação Dolar" value="<%= cotacao %>">
+      <input name="cotacao" class="form-control text-center" id="cotacao" type="text" placeholder="Cotação Dolar" value="<%= cotacao %>">
     </div>
     <div class="alert alert-danger" hidden="true" id="cotacao-validacao" role="alert">
       O campo de cotação precisa ser preenchido
     </div>
     <div class="form-group">
       <label for="quantidade">Quantidade: </label>
-      <input name="quantidade" id="quantidade" type="text" placeholder="Quantidade de Dolares">
+      <input name="quantidade" class="form-control text-center" id="quantidade" type="text" placeholder="Quantidade de Dolares">
     </div>
     <div class="alert alert-danger" hidden="true" id="quantidade-validacao" role="alert">
-        O campo de quantidade precisa ser preenchido
+      O campo de quantidade precisa ser preenchido
     </div>
     <button class="btn btn-primary">Converter</button>
   </form>

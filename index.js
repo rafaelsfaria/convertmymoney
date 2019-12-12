@@ -23,10 +23,11 @@ app.get('/cotacao', (req, res) => {
       conversao: toMoney(conversao),
       cotacao: toMoney(cotacao),
       quantidade: toMoney(quantidade),
-      error: false
-    })  
+      error: false,
+      alert: 'success'
+    })
   } else {
-    res.render('cotacao', { error: 'Valores inválidos' })
+    res.render('cotacao', { error: 'Valores inválidos', alert: 'danger' })
   }
 })
 
