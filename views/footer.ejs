@@ -3,16 +3,16 @@
 <script>
   $(function(){
     $('#form').submit(function(event){
-      const cotacao = $('#cotacao').val()
-      const quantidade = $('#quantidade').val()
-      if (cotacao.length === 0) {
+      const cotacao = parseFloat($('#cotacao').val())
+      const quantidade = parseFloat($('#quantidade').val())
+      if (!cotacao) {
         event.preventDefault()
         $('#cotacao-validacao').removeAttr('hidden')
       } else {
         $('#cotacao-validacao').attr('hidden', 'true')
       }
 
-      if (quantidade.length === 0) {
+      if (!quantidade) {
         event.preventDefault()
         $('#quantidade-validacao').removeAttr('hidden')
       } else {
